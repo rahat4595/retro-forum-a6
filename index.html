@@ -1,15 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iconic Forum</title>
-
-    <!-- Tailwind and dsisy UI links -->
+    <title>Retro forum</title>
+    <!-- added google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <!-- css styles -->
+    <style>
+        .font-mulish {
+            font-family: "Mulish", sans-serif;
+        }
+    </style>
+    <!-- link daisyUI -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <h1>Hello</h1>
+<header>
+    <!-- navbar -->
+    <div class="navbar max-w-7xl m-auto bg-base-100">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+            </div>
+            <ul tabindex="0" class=" menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                <li><i title="home" class="fa fa-home"></i></li>
+                <li><i title="tooltip" class="fa fa-pencil"></i></li>
+                <li><i title="user" class="fa fa-user"></i></li>
+                <li><i title="forum" class="fa fa-flag"></i></li>
+            </ul>
+          </div>
+          <a class="btn btn-ghost text-3xl">IcoNic</a>
+        </div>
+        <div class="navbar-end hidden lg:flex ">
+          <ul class="menu menu-horizontal px-1">
+            <li><i title="home" class="fa fa-home"></i></li>
+            <li><i title="tooltip" class="fa fa-pencil"></i></li>
+            <li><i title="user" class="fa fa-user"></i></li>
+            <li><i title="forum" class="fa fa-flag"></i></li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+          <a class="btn bg-blue-500 rounded-full flex align-middle lg:px-8  text-xl text-white">Sign In</a>
+        </div>
+      </div>
+
+      
+
+</header>
+
+<main>
+    <!-- banner section -->
+    <section class="p-5 max-w-7xl h-[550px] rounded-3xl bg-[url(./images/bgbanner.png)] bg-[#12132D] bg-cover  m-auto mt-10 flex flex-col lg:flex-row justify-center items-center lg:px-40 ">
+        <div>
+            <h1 class="text-white text-3xl lg:text-6xl font-black  lg:pr-48 ">Welcome to the retro forum</h1>
+            <p class=" mt-5 text-xl lg:text-2xl text-gray-400 font-500 lg:pr-48">Share your favorite opinion and win and wp forum coffee mug</p>
+            <div class="mt-5 ">
+                <input type="text" placeholder="search here anything" class="input rounded-3xl w-full max-w-xs" />
+                <button class=" px-4 py-2 rounded-full bg-blue-500  text-xl text-white">Search</button>
+            </div>
+        </div>
+
+        <div class="bg-white w-full lg:w-96 h-64 rounded-3xl  ">
+            <div class="mt-10 text-start ">
+                <div class="flex  justify-evenly text-xl leading-10">
+                    <h1 class="text-gray-500 font-medium">Registerd Users</h1>
+                    <p class="text-gray-500 font-medium">01</p>
+                </div>
+                <div class="flex justify-evenly text-xl leading-10">
+                    <h1 class="text-gray-500 font-medium">Forums</h1>
+                    <p class="text-gray-500 font-medium">01</p>
+                </div>
+                <div class="flex justify-evenly text-xl leading-10">
+                    <h1 class="text-gray-500 font-medium">Topics</h1>
+                    <p class="text-gray-500 font-medium">01</p>
+                </div>
+                <div class="flex  justify-evenly text-xl leading-10">
+                    <h1 class="text-gray-500 font-medium">Replies</h1>
+                    <p class="text-gray-500 font-medium">01</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+</main>
+<footer>
+
+
+</footer>
+
+<script src="forum.js"></script>
+<script src="tailwind.config.js"></script>
 </body>
+
 </html>
