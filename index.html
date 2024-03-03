@@ -33,7 +33,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
             </div>
             <ul tabindex="0" class=" menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                <li class=""><i title="home" class="fa fa-home text-lg text-gray-500"></i></li>
+                <li><i title="home" class="fa fa-home text-lg text-gray-500"></i></li>
                 <li><i title="tooltip" class="fa fa-pencil text-lg text-gray-500"></i></li>
                 <li><i title="user" class="fa fa-user text-lg text-gray-500"></i></li>
                 <li><i title="forum" class="fa fa-flag text-lg text-gray-500"></i></li>
@@ -43,7 +43,7 @@
         </div>
         <div class="navbar-end hidden lg:flex ">
           <ul class="menu menu-horizontal px-1">
-            <li class=""><i title="home" class="fa fa-home text-lg text-gray-500"></i></li>
+            <li><i title="home" class="fa fa-home text-lg text-gray-500 "></i></li>
             <li><i title="tooltip" class="fa fa-pencil text-lg text-gray-500"></i></li>
             <li><i title="user" class="fa fa-user text-lg text-gray-500"></i></li>
             <li><i title="forum" class="fa fa-flag text-lg text-gray-500"></i></li>
@@ -64,9 +64,10 @@
         <div>
             <h1 class="text-white text-3xl lg:text-6xl font-black  lg:pr-48 ">Welcome to the <span class="text-[#797DFC]">Icon</span> forum</h1>
             <p class=" mt-5  text-sm lg:text-2xl text-gray-400 font-500 lg:pr-48">Share your favorite opinion and win and wp forum coffee mug</p>
-            <div class="mt-5 ">
-                <input type="text" placeholder="search here anything" class="input rounded-3xl w-full max-w-xs" />
-                <button class=" px-4 py-2 rounded-full bg-[#797DFC] font-bold  text-xl text-white">Search</button>
+
+            <div class="bg-white w-full lg:w-96 p-1 flex rounded-3xl mt-8">
+                <input type="text" placeholder="search here anything" class="input w-full max-w-xs">
+                <button class="btn bg-[#797DFC] rounded-full w-28 text-white font-semibold text-lg">Search</button>
             </div>
         </div>
 
@@ -185,13 +186,75 @@
     </section>
 
     <!-- Latest Post -->
-    <section class="max-w-7xl m-auto p-5 lg:p-5 mt-20">
+    <section class="max-w-7xl m-auto p-5 lg:p-5 lg:mt-20">
         <div class="text-center m-auto max-w-2xl">
             <h1 class="text-4xl mb-3 font-black">Latest Posts</h1>
             <p class="text-lg font-normal text-gray-500"> Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined</p>
         </div>
+
+        <!-- cards -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 my-5 gap-3 w-full m-auto">
+            <!-- card 1-->
+             <div class="p-4 border rounded-xl">
+             <div class="lg:w-72 h-44 2xl:w-full ml-3 2xl:gap-28 bg-[#12132D0D] rounded-2xl"></div>
+             <div class="flex gap-2 my-3 justify-center lg:justify-start"><img src="./images/calender.png" alt=""> <span id="date" class="text-base text-[#12132D99]">Time</span></div>
+             <div class="lg:w-80 space-y-3 text-center lg:text-left">
+                <h1 class="text-[#12132D] text-lg font-bold">What will a mars habitat force that impact in our daily life!!!</h1>
+                <p class="text-base text-[#12132D99]">Yes, you can run unit tests and view the results directly within the app.</p>
+            </div>
+             <div class="flex justify-center lg:justify-start gap-5 my-4">
+             <div class="w-11 h-11 rounded-lg">
+                <img class="rounded-full" src="./images/Ellipse 1.png" alt="">
+            </div>
+                 <div>
+                    <div class="flex lg:text-left text-center flex-col text-base font-bold">Cameron Williamson <span class="text-sm text-[#12132D80]" id="person">Unknown</span></div> 
+                </div>
+            </div>
+          </div>
+        
+            <!-- card 2 -->
+             <div class="p-4 border rounded-xl">
+             <div class=" lg:w-72 h-44 rounded-2xl ml-3 2xl:w-full 2xl:gap-28 bg-[#12132D0D]"></div>
+             <div class="flex gap-2 my-3 justify-center lg:justify-start"><img src="./images/calender.png" alt=""> <span id="date" class="text-base text-[#12132D99]">Time</span></div>
+             <div class="lg:w-80 space-y-3 text-center lg:text-left">
+                <h1 class="text-[#12132D] text-lg font-bold">What will a mars habitat force that impact in our daily life!!!</h1>
+                <p class="text-base text-[#12132D99]">Yes, you can run unit tests and view the results directly within the app.</p>
+            </div>
+            <div class="flex justify-center lg:justify-start gap-5 my-4">
+                <div class="w-11 h-11 rounded-lg">
+                <img class="rounded-full" src="./images/Ellipse 1.png" alt="">
+            </div>
+                <div>
+                    <div class="flex lg:text-left text-center flex-col text-base font-bold">Cameron Williamson <span class="text-sm text-[#12132D80]" id="person">Unknown</span></div>  
+                </div>
+            </div>
+          </div>
+        
+            <!-- card 3-->
+            <div class="p-4 border rounded-xl">
+            <div class=" lg:w-72 h-44 rounded-2xl ml-3 2xl:w-full 2xl:gap-28 bg-[#12132D0D]"></div>
+            <div class="flex gap-2 my-3 justify-center lg:justify-start"><img src="./images/calender.png" alt=""> <span id="date" class="text-base text-[#12132D99]">Time</span></div>
+            <div class="lg:w-80 space-y-3 text-center lg:text-left">
+                <h1 class="text-[#12132D] text-lg font-bold ">What will a mars habitat force that impact in our daily life!!!</h1>
+                <p class="text-base text-[#12132D99]">Yes, you can run unit tests and view the results directly within the app.</p>
+            </div>
+            <div class="flex justify-center lg:justify-start gap-5 my-4">
+                <div class="w-11 h-11 rounded-lg">
+                  <img class="rounded-full" src="./images/Ellipse 1.png" alt="">
+            </div>
+                <div>
+                  <div class="flex lg:text-left text-center flex-col text-base font-bold">Cameron Williamson <span class="text-sm text-[#12132D80]" id="person">Unknown</span></div>
+                </div>
+            </div>
+          </div>
+          </div>        
     </section>
 
+
+
+
+
+    <!-- footer section -->
 </main>
 <footer class="w-full h-[490px] bg-[#12132D0D] flex justify-center items-center ">
     <section class="w-3/4 text-center">
