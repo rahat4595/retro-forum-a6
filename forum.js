@@ -24,13 +24,13 @@ const loadData = async () =>{
     <div class="flex flex-col lg:flex-row gap-7">
     <div>
     <div class="h-20 w-20  lg:text-left lg:m-0 text-center m-auto bg-[#f9f9fafd] rounded-lg">
-        <img src="${singleData.image}" alt="">
+        <img class="rounded-xl" src="${singleData.image}" alt="">
     </div>
         <div class="h-5 w-5 lg:m-0 text-center m-auto bg-[#10B981] relative rounded-full left-9 lg:left-16 bottom-20 border-gray-200 border-2"></div>
     </div>
     <div>
     <div class="flex gap-10 justify-center lg:justify-start text-[#12132D99] font-bold">
-    <div><span id="#">#</span> ${singleData.category}</div>
+    <div><span id="#"># ${singleData.category}</span> </div>
         <div><span id="Author">Author : </span>${singleData.author.name}</div>
     </div>
 
