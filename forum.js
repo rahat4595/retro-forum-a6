@@ -51,7 +51,7 @@ const loadData = async () =>{
     <i class='far fa-clock mt-1' style='font-size:20px'></i> <span id="time">${singleData.posted_time}</span></div>
   </div>
   <div>
-    <button onclick="titledata()" class=" px-2 rounded-full bg-[#10B981] font-bold text-center  text-xl text-white"><i class="fa fa-envelope" style="font-size:15px"></i></button>
+    <button id="increment-button" onclick="titledata(); incrementNumber()" class=" px-2 rounded-full bg-[#10B981] font-bold text-center  text-xl text-white"><i class="fa fa-envelope" style="font-size:15px"></i></button>
   </div>
   </div>
 
@@ -152,6 +152,18 @@ const loadLatestPost = async () =>{
 }
 
 loadLatestPost();
+
+// increment button
+const button = document.getElementById("increment-button");
+const numberDisplay = document.getElementById("number-display");
+let currentNumber = 1;
+
+function incrementNumber() {
+  currentNumber++;
+  numberDisplay.textContent = currentNumber;
+}
+
+// loading spinner
 
 const toggleLoadingSpinner = (isLoading) => {
   const loadingSpinner = document.getElementById('loading-spinner');
