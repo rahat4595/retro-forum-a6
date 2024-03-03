@@ -3,12 +3,13 @@ const loadData = async () =>{
     const res = await fetch("https://openapi.programming-hero.com/api/retro-forum/posts");
     const data = await res.json();
     const allPosts = data.posts;
-    displayData(allPosts);
+    const doublePost = data.posts;
+    displayData(allPosts, doublePost);
 }
 
 // display data
-  const displayData = (allPosts) => {
-
+  const displayData = (allPosts ,doublePost) => {
+    
   const dataContainer = document.getElementById("category-container");
 
   allPosts.forEach(singleData => {
@@ -50,7 +51,7 @@ const loadData = async () =>{
     <i class='far fa-clock mt-1' style='font-size:20px'></i> <span id="time">${singleData.posted_time}</span></div>
   </div>
   <div>
-    <button class=" px-2 rounded-full bg-[#10B981] font-bold text-center  text-xl text-white"><i class="fa fa-envelope" style="font-size:15px"></i></button>
+    <button onclick="titledata()" class=" px-2 rounded-full bg-[#10B981] font-bold text-center  text-xl text-white"><i class="fa fa-envelope" style="font-size:15px"></i></button>
   </div>
   </div>
 
@@ -65,9 +66,42 @@ const loadData = async () =>{
 //   appendChild
   dataContainer.appendChild(div);
 
+ 
+  });
+
+  
+  doublePost.forEach(doubleData => {
+    console.log(doubleData)
 
   })
+
 }
+
+const titledata = (doubleData) => {
+  const titleContainer = document.getElementById('title-container');
+  
+    // creating a div
+    const div3 = document.createElement('div');
+
+    // setting innerHtml
+
+    div3.innerHTML =`
+    <div class="flex  bg-white px-10 py-4 rounded-lg mt-7 flex-col lg:flex-row lg:justify-center items-center">
+               <div>
+                   <h1 class="w-52 mt-auto my-3 lg:my-0 lg:text-left text-center text-base font-semibold text-black">10 Kids Unaware of Their Halloween Costume</h1>
+               </div>
+               <div>
+               <div class="flex text-[#12132D99] font-medium space-x-2"> 
+                   <i class="fa fa-eye mt-1" style="font-size:20px"></i> 
+               <span id="view-count">1,588</span>
+                           </div>
+                       </div>
+                   </div>
+    
+    ` 
+    // append child
+    titleContainer.appendChild(div3)
+} 
 
 loadData();
 
@@ -82,9 +116,9 @@ const loadLatestPost = async () =>{
 
 // display data
   const displayLatestData = (latestAllPosts) => {
-
+    
   const dataContainer2 = document.getElementById("latest-posts");
-
+  
   latestAllPosts.forEach(singleLatestPost => {
     console.log(singleLatestPost);
 
@@ -113,7 +147,21 @@ const loadLatestPost = async () =>{
   dataContainer2.appendChild(div2);
 
 
-  })
+  });
+  
 }
 
 loadLatestPost();
+
+const toggleLoadingSpinner = (isLoading) => {
+  const loadingSpinner = document.getElementById('loading-spinner');
+
+  if (isLoading) {
+    loadingSpinner.classList.remove('hidden');
+  } else {
+    
+    setTimeout(() => {
+      loadingSpinner.classList.add('hidden');
+    }, 2000);
+  }
+};
