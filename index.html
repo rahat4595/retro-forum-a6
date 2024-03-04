@@ -10,34 +10,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
         rel="stylesheet">
+    
     <!-- css styles -->
     <style>
         .font-mulish {
             font-family: "Mulish", sans-serif;
         }
-        .loader{
-           
-.loader {    
-  --r1: 154%;
-  --r2: 68.5%;
-  width: 60px;
-  aspect-ratio: 1;
-  border-radius: 50%; 
-  background:
-    radial-gradient(var(--r1) var(--r2) at top   ,#0000 79.5%,#269af2 80%),
-    radial-gradient(var(--r1) var(--r2) at bottom,#269af2 79.5%,#0000 80%),
-    radial-gradient(var(--r1) var(--r2) at top   ,#0000 79.5%,#269af2 80%),
-    #ccc;
-  background-size: 50.5% 220%;
-  background-position: -100% 0%,0% 0%,100% 0%;
-  background-repeat:no-repeat;
-  animation: l9 2s infinite linear;
-}
-@keyframes l9 {
-    33%  {background-position:    0% 33% ,100% 33% ,200% 33% }
-    66%  {background-position: -100%  66%,0%   66% ,100% 66% }
-    100% {background-position:    0% 100%,100% 100%,200% 100%}
-}
+        .loading-spiner img{
+            width: 25%;
+            margin: auto;
         }
     </style>
     <!-- link daisyUI -->
@@ -126,9 +107,13 @@
             <h1 class="text-4xl mb-3 font-black">Let's Discuss</h1>
             <p class="text-lg font-normal text-gray-500"> Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined</p>
         </div>
+
+        <!-- loading spinner -->
         <div id="loading-spiner" class="text-center my-40 hidden">
-            <span class="loading loading-spinner text-primary loading-lg"></span>
+            <span class="loading loading-spinner loading-lg"></span>
         </div>
+
+       
         <div class="flex flex-col lg:flex-row lg:justify-center gap-5 mb-5 mt-10">
             <div class="flex flex-col gap-5" id="category-container" >
               <!-- left side card -->
@@ -202,9 +187,10 @@
  <div id="latest-posts" class="flex flex-col lg:flex-row lg:ml-20 gap-6"></div>
 </section>
 
-
-    <!-- footer section -->
 </main>
+
+
+<!-- footer section -->
 <footer class="w-full h-[490px] bg-[#12132D0D] flex justify-center items-center ">
     <section class="w-3/4 text-center">
         <div class="text-center m-auto max-w-2xl">

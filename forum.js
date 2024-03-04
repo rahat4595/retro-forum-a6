@@ -1,7 +1,5 @@
 const searchInput = document.getElementById('search-category-input');
 const searchBtn = document.getElementById('search-category-btn');
-
-
 // load data from API
 const loadData = async (valueInput) =>{
   let url;
@@ -80,11 +78,12 @@ const loadData = async (valueInput) =>{
  
   });
 
-  
-  
+  toggleLoadingSpinner(false)
 
 }
 
+
+// right side data showing
 const titleContainer = document.getElementById('title-container');
 const incrementNumber = document.getElementById('number-display');
 const titledata = (value) => {
@@ -176,10 +175,24 @@ loadLatestPost();
 // creating search category
 
 searchBtn.addEventListener('click', () =>{
+  toggleLoadingSpinner(true)
   const valueInput = searchInput.value
   loadData(valueInput)
   
 })
+
+
+// loading spinner
+
+const toggleLoadingSpinner = (isLoading) => {
+  const loadingSpinner = document.getElementById('loading-spiner');
+  if (isLoading) {
+      loadingSpinner.classList.remove('hidden')
+  }
+  else {
+      loadingSpinner.classList.add('hidden');
+  }
+}
 
 loadData();
 
@@ -190,18 +203,3 @@ loadData();
 
 
 
-// loading spinner
-
-const toggleLoadingSpinner = (isLoading) => {
-  const loadingSpinner = document.getElementById('loading-spinner');
-
-  if (isLoading) {
-    setTimeout(() => {
-      loadingSpinner.classList.remove('hidden');
-    }, 2000);
-    
-  } else {
-    
-    loadingSpinner.classList.add('hidden');
-  }
-};
