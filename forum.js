@@ -62,7 +62,7 @@ const loadData = async (valueInput) =>{
     <i class='far fa-clock mt-1' style='font-size:20px'></i> <span id="time">${singleData.posted_time}</span></div>
   </div>
   <div>
-    <button id="increment-button" onclick="titledata(); incrementNumber()" class=" px-2 rounded-full bg-[#10B981] font-bold text-center  text-xl text-white"><i class="fa fa-envelope" style="font-size:15px"></i></button>
+    <button id="increment-button" onclick='titledata("${singleData.title.replace("'","")}--${singleData.view_count}")' class=" px-2 rounded-full bg-[#10B981] font-bold text-center  text-xl text-white"><i class="fa fa-envelope" style="font-size:15px"></i></button>
   </div>
   </div>
 
@@ -81,16 +81,23 @@ const loadData = async (valueInput) =>{
   });
 
   
-  doublePost.forEach(doubleData => {
-    console.log(doubleData)
-
-  })
+  
 
 }
 
-const titledata = () => {
-  const titleContainer = document.getElementById('title-container');
+const titleContainer = document.getElementById('title-container');
+const incrementNumber = document.getElementById('number-display');
+const titledata = (value) => {
+
   
+  const increaseNumber = Number(incrementNumber.innerText)+1
+ incrementNumber.innerText =  increaseNumber;
+
+
+
+
+   const splitToArray = value.split("--")
+   const [title, view_count] = splitToArray
     // creating a div
     const div3 = document.createElement('div');
 
@@ -99,12 +106,12 @@ const titledata = () => {
     div3.innerHTML =`
     <div class="flex  bg-white px-10 py-4 rounded-lg mt-7 flex-col lg:flex-row lg:justify-center items-center">
                <div>
-                   <h1 class="w-52 mt-auto my-3 lg:my-0 lg:text-left text-center text-base font-semibold text-black">10 Kids Unaware of Their Halloween Costume</h1>
+                   <h1 class="w-52 mt-auto my-3 lg:my-0 lg:text-left text-center text-base font-semibold text-black">${title}</h1>
                </div>
                <div>
                <div class="flex text-[#12132D99] font-medium space-x-2"> 
                    <i class="fa fa-eye mt-1" style="font-size:20px"></i> 
-               <span id="view-count">1,588</span>
+               <span id="view-count">${view_count}</span>
                            </div>
                        </div>
                    </div>
@@ -164,15 +171,7 @@ const loadLatestPost = async () =>{
 
 loadLatestPost();
 
-// increment button
-const button = document.getElementById("increment-button");
-const numberDisplay = document.getElementById("number-display");
-let currentNumber = 0;
 
-function incrementNumber() {
-  currentNumber++;
-  numberDisplay.textContent = currentNumber;
-}
 
 // creating search category
 
