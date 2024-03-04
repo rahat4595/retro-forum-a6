@@ -1,20 +1,31 @@
+const searchInput = document.getElementById('search-category-input');
+const searchBtn = document.getElementById('search-category-btn');
+
+
 // load data from API
-const loadData = async () =>{
-    const res = await fetch("https://openapi.programming-hero.com/api/retro-forum/posts");
+const loadData = async (valueInput) =>{
+  let url;
+   if(valueInput){
+  url = `https://openapi.programming-hero.com/api/retro-forum/posts?category=${valueInput}`
+ }
+ else{
+  url = "https://openapi.programming-hero.com/api/retro-forum/posts"
+ }
+    const res = await fetch(url);
     const data = await res.json();
-    const allPosts = data.posts;
-    const doublePost = data.posts;
-    displayData(allPosts, doublePost);
+    const allPosts = data.posts; 
+    displayData(allPosts);
 }
 
 // display data
-  const displayData = (allPosts ,doublePost) => {
+  const displayData = (allPosts) => {
     
   const dataContainer = document.getElementById("category-container");
+  dataContainer.innerHTML=""
 
   allPosts.forEach(singleData => {
     console.log(singleData);
-
+   
     // create a div
     const div = document.createElement('div');
 
@@ -27,7 +38,7 @@ const loadData = async () =>{
     <div class="h-20 w-20  lg:text-left lg:m-0 text-center m-auto bg-[#f9f9fafd] rounded-lg">
         <img class="rounded-xl" src="${singleData.image}" alt="">
     </div>
-        <div class="h-5 w-5 lg:m-0 text-center m-auto bg-[#10B981] relative rounded-full left-9 lg:left-16 bottom-20 border-gray-200 border-2"></div>
+        <div id="active-status" class="h-5 w-5 lg:m-0 text-center m-auto ${singleData?.isActive?"bg-[#10B981]":"bg-red-600"} relative rounded-full left-9 lg:left-16 bottom-20 border-gray-200 border-2"></div>
     </div>
     <div>
     <div class="flex gap-10 justify-center lg:justify-start text-[#12132D99] font-bold">
@@ -77,7 +88,7 @@ const loadData = async () =>{
 
 }
 
-const titledata = (doubleData) => {
+const titledata = () => {
   const titleContainer = document.getElementById('title-container');
   
     // creating a div
@@ -103,7 +114,7 @@ const titledata = (doubleData) => {
     titleContainer.appendChild(div3)
 } 
 
-loadData();
+
 
 
 // load data from API
@@ -156,12 +167,29 @@ loadLatestPost();
 // increment button
 const button = document.getElementById("increment-button");
 const numberDisplay = document.getElementById("number-display");
-let currentNumber = 1;
+let currentNumber = 0;
 
 function incrementNumber() {
   currentNumber++;
   numberDisplay.textContent = currentNumber;
 }
+
+// creating search category
+
+searchBtn.addEventListener('click', () =>{
+  const valueInput = searchInput.value
+  loadData(valueInput)
+  
+})
+
+loadData();
+
+
+
+
+
+
+
 
 // loading spinner
 
@@ -169,11 +197,12 @@ const toggleLoadingSpinner = (isLoading) => {
   const loadingSpinner = document.getElementById('loading-spinner');
 
   if (isLoading) {
-    loadingSpinner.classList.remove('hidden');
+    setTimeout(() => {
+      loadingSpinner.classList.remove('hidden');
+    }, 2000);
+    
   } else {
     
-    setTimeout(() => {
-      loadingSpinner.classList.add('hidden');
-    }, 2000);
+    loadingSpinner.classList.add('hidden');
   }
 };

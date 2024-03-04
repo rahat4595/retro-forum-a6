@@ -16,7 +16,7 @@
             font-family: "Mulish", sans-serif;
         }
         .loader{
-            /* HTML: <div class="loader"></div> */
+           
 .loader {    
   --r1: 154%;
   --r2: 68.5%;
@@ -50,27 +50,27 @@
 <body>
 <header>
     <!-- navbar -->
-    <div class="navbar max-w-7xl m-auto bg-base-100">
+    <div class="navbar max-w-7xl m-auto bg-base-100 pt-8">
         <div class="navbar-start">
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
             </div>
             <ul tabindex="0" class=" menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                <li><i title="home" class="fa fa-home text-lg text-gray-500"></i></li>
-                <li><i title="tooltip" class="fa fa-pencil text-lg text-gray-500"></i></li>
-                <li><i title="user" class="fa fa-user text-lg text-gray-500"></i></li>
-                <li><i title="forum" class="fa fa-flag text-lg text-gray-500"></i></li>
+                <div><li><i title="home" class="fa fa-home text-lg text-gray-500 "></i></li></div>
+                <div><li><i title="tooltip" class="fa fa-pencil text-lg text-gray-500"></i></li></div>
+                <div><li><i title="user" class="fa fa-user text-lg text-gray-500"></i></li></div>
+                <div><li><i title="forum" class="fa fa-flag text-lg text-gray-500"></i></li></div>
             </ul>
           </div>
           <a class="btn btn-ghost text-3xl">IcoNic</a>
         </div>
         <div class="navbar-center hidden lg:flex ">
           <ul class="menu menu-horizontal px-1">
-            <li><i title="home" class="fa fa-home text-lg text-gray-500 "></i></li>
-            <li><i title="tooltip" class="fa fa-pencil text-lg text-gray-500"></i></li>
-            <li><i title="user" class="fa fa-user text-lg text-gray-500"></i></li>
-            <li><i title="forum" class="fa fa-flag text-lg text-gray-500"></i></li>
+            <div class="tooltip" data-tip="Home"><li><i title="" class="fa fa-home text-lg text-gray-500 "></i></li></div>
+            <div class="tooltip" data-tip="Tooltip"><li><i title="" class="fa fa-pencil text-lg text-gray-500"></i></li></div>
+            <div class="tooltip" data-tip="user"><li><i title="" class="fa fa-user text-lg text-gray-500"></i></li></div>
+            <div class="tooltip" data-tip="forum"><li><i title="" class="fa fa-flag text-lg text-gray-500"></i></li></div>
           </ul>
         </div>
         <div class="navbar-end">
@@ -89,9 +89,9 @@
             <h1 class="text-white text-3xl lg:text-6xl font-black  lg:pr-48 ">Welcome to the <span class="text-[#797DFC]">Icon</span> forum</h1>
             <p class=" mt-5  text-sm lg:text-2xl text-gray-400 font-500 lg:pr-48">Share your favorite opinion and win and wp forum coffee mug</p>
 
-            <div class="bg-white w-full lg:w-96 p-1 flex rounded-3xl mt-8">
-                <input type="text" placeholder="search here anything" class="input w-full max-w-xs">
-                <button class="btn bg-[#797DFC] rounded-full w-28 text-white font-semibold text-lg">Search</button>
+            <div  class="bg-white w-full lg:w-96 p-1 flex rounded-3xl mt-8">
+                <input id="search-category-input" type="text" placeholder="search here anything" class="input w-full max-w-xs">
+                <button id="search-category-btn" class="btn bg-[#797DFC] rounded-full w-28 text-white font-semibold text-lg">Search</button>
             </div>
         </div>
 
@@ -103,7 +103,7 @@
                 </div>
                 <div class="flex justify-evenly text-xl  leading-10">
                     <h1 class="text-gray-500 font-medium">Forums</h1>
-                    <p class="text-gray-500 font-medium">01</p>
+                    <p class="text-gray-500 font-medium">05</p>
                 </div>
                 <div class="flex justify-evenly text-xl leading-10">
                     <h1 class="text-gray-500 font-medium">Topics</h1>
@@ -126,9 +126,9 @@
             <h1 class="text-4xl mb-3 font-black">Let's Discuss</h1>
             <p class="text-lg font-normal text-gray-500"> Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined</p>
         </div>
-        <!-- <div id="loading-spinner" class="text-center my-40 hidden">
+        <div id="loading-spiner" class="text-center my-40 hidden">
             <span class="loading loading-spinner text-primary loading-lg"></span>
-        </div> -->
+        </div>
         <div class="flex flex-col lg:flex-row lg:justify-center gap-5 mb-5 mt-10">
             <div class="flex flex-col gap-5" id="category-container" >
               <!-- left side card -->
@@ -147,13 +147,13 @@
                <div class="flex gap-2 font-normal">
                <div><img src="./images/correct-mark.png" alt=""></div>
                <div>
-               <h2 class="text-base text-[#12132D99] font-medium">Mark as read <span id="number-display">1</span></h2>
+               <h2 class="text-base text-[#12132D99] font-medium">Mark as read <span id="number-display">0</span></h2>
              </div>
              </div>
              </div>
              
                <!-- views -->
-               <div class="flex  bg-white px-10 py-4 rounded-lg mt-7 flex-col lg:flex-row lg:justify-center items-center">
+               <!-- <div class="flex  bg-white px-10 py-4 rounded-lg mt-7 flex-col lg:flex-row lg:justify-center items-center">
                <div>
                    <h1 class="w-52 mt-auto my-3 lg:my-0 lg:text-left text-center text-base font-semibold text-black">10 Kids Unaware of Their Halloween Costume</h1>
                </div>
@@ -163,7 +163,7 @@
                <span id="view-count">1,588</span>
                            </div>
                        </div>
-                   </div>
+                   </div> -->
                </div>
             </div>
           </div>
