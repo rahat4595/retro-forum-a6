@@ -21,6 +21,10 @@ const loadData = async (valueInput) =>{
   const dataContainer = document.getElementById("category-container");
   dataContainer.innerHTML=""
 
+  setTimeout(() => {
+    toggleLoadingSpinner(false)
+  }, 2000);
+  
   allPosts.forEach(singleData => {
     console.log(singleData);
    
@@ -78,7 +82,7 @@ const loadData = async (valueInput) =>{
  
   });
 
-  toggleLoadingSpinner(false)
+  
 
 }
 
